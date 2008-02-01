@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   
   def initialize
     @css = action_name
-    @id = action_name
+    @page = action_name
   end
 end

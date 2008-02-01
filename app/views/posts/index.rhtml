@@ -1,24 +1,9 @@
-<h1>Listing posts</h1>
+<h1>Arthur's Design</h1>
+<h5>Art : Space : Style : Etc</h5>
+<p>A random introduction into Kansas City art, space, style, and a little bit more. Enjoy the design, thoughts, reviews, and stories from a creative designer, writer, and entrepreneur that is addicted to caffeine, bikes and chocolate muffins. Date on!</p>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Posted on</th>
-  </tr>
-  
 <% for post in @posts %>
-  <tr>
-    <td><%=h post.title %></td>
-    <td><%=h post.body %></td>
-    <td><%=h post.posted_on %></td>
-    <td><%= link_to 'Show', post_path(post) %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post_path(post), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <h6><%=h post.posted_on %></h6>
+    <h5><%=h post.title %></h5>
+    <%=h post.body.textilize %>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New post', new_post_path %>
