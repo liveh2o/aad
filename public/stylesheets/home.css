@@ -1,0 +1,17 @@
+@import url('master.css');
+
+#page-content {
+  height:6.6em;
+  margin-top:543px;
+  position:relative;
+  }
+
+#page-content li {
+  float:left;
+  padding-right:1em;
+  }
+#page-content ul {
+  position:absolute;
+    bottom:0px;
+    right:0px;
+  }

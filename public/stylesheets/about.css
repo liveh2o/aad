@@ -1,0 +1,21 @@
+@import url('master.css');
+
+#page-content {
+  background-color:#fff;
+  color:#666;
+  height:500px;
+  padding-top:95px;
+  }
+#page-content p {
+  font-size:1.35em;
+  margin:10px 0 10px 157px;
+  width:400px;
+  }
+#page-content p.strong {
+  background-color:inherit;
+  color:#444;
+  font-size:1.65em;
+  font-weight:bold;
+  margin-top:0;
+  text-transform:uppercase;
+  }
