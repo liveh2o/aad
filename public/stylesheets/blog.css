@@ -18,6 +18,11 @@
   font-weight:normal;
   text-transform:uppercase;
   }
+#page-content h6 {
+  font-size:1em;
+  font-weight:normal;
+  line-height:18px;
+  }
 #page-content p {
   font-size:1em !important;
   line-height:16px;

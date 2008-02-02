@@ -39,7 +39,7 @@ class TagsController < ApplicationController
     respond_to do |format|
       if @tag.save
         flash[:notice] = 'Tag was successfully created.'
-        format.html { redirect_to tag_url(@tag) }
+        format.html { redirect_to tags_url }
         format.xml  { head :created, :location => tag_url(@tag) }
       else
         format.html { render :action => "new" }
@@ -56,7 +56,7 @@ class TagsController < ApplicationController
     respond_to do |format|
       if @tag.update_attributes(params[:tag])
         flash[:notice] = 'Tag was successfully updated.'
-        format.html { redirect_to tag_url(@tag) }
+        format.html { redirect_to tags_url }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

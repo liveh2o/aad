@@ -5,5 +5,10 @@ class SiteController < ApplicationController
   
   def contact
   
-  end    
+  end
+  
+  def blog
+    @posts = Post.find(:all)
+    @tags = Tag.find(:all)
+  end
 end

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @posts = Post.find(:all)
 
     respond_to do |format|
-      format.html { render :layout => "application" }# index.rhtml
+      format.html # index.rhtml
       format.xml  { render :xml => @posts.to_xml }
     end
   end
@@ -77,13 +77,5 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url }
       format.xml  { head :ok }
     end
-  end
-
-  
-  private
-  
-  def styles
-    @css = 'blog'
-    @page = 'blog'
   end
 end
