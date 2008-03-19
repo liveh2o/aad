@@ -13,11 +13,11 @@ class SiteController < ApplicationController
   end
   
   def work
+    @portfolio = PortfolioImage.find(:all)
     unless params[:id].nil?
       @image = PortfolioImage.find(params[:id])
-      @portfolio = PortfolioImage.find(:all)
     else 
-      redirect_to "/work/1"
+      redirect_to "/work/" + @portfolio.first.id.to_s
     end
   end
   
