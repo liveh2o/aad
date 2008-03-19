@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Admin::CommentsController < ApplicationController
   # GET /comments
   # GET /comments.xml
   def index

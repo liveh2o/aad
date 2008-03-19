@@ -1,0 +1,24 @@
+@import url('master.css');
+
+#page-content {
+  background-color:#fff;
+  color:inherit;
+  padding-top:95px;
+  text-align:right;
+  }
+#page-content h6 {
+  float:right;
+  margin:15px 50px 0 0;
+  }
+#page-content li {
+  float:left;
+  font-weight:bold;
+  padding:0 3px 0 3px;
+  }
+#page-content li a {
+  font-weight:normal;
+  }
+#page-content ul {
+  float:right;
+  margin-right:50px;
+  }

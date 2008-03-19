@@ -1,0 +1,12 @@
+<h1>Portfolio</h1>
+
+<%= button_to 'Add a Portfolio Image', new_admin_portfolio_path, :method => :get %>
+<br/>
+<% for image in @portfolio %>
+  <div style="float:left;margin:5px;">
+      <div style="border:1px solid #ccc;padding:4px;margin:0;width:152px;">
+          <img src="<%= portfolio_path(image) %>" style="border:1px solid #ccc;width:150px" />
+      </div>
+      <h5 style="text-align:right;margin:0;"><%=h image.title %><%= link_to image_tag('trash.gif'), admin_portfolio_path(image), :confirm => 'Are you sure?', :method => :delete %></h5>
+  </div>
+<% end %>

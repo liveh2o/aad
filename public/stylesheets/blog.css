@@ -8,6 +8,10 @@
   padding-left:157px;
   width:463px;
   }
+#page-content br {
+  display:block;
+  margin:5px auto 5px auto;
+  }
 #page-content h1 {
   background-color:inherit;
   color:#444;

@@ -20,9 +20,9 @@
         <div id="page-wrap">
             <div id="page-navigation">
                 <h1><%= link_to_unless_current "Design By", home_url %></h1>
-                <img src="images/logo.jpg" alt="AAD" />
+                <img src="<%= home_url %>images/logo.jpg" alt="AAD" />
                 <ul>
-                    <li><a href="#">Work</a></li>
+                    <li><%= link_to_unless_current "Work", work_url %></li>
                     <li><%= link_to_unless_current "About", about_url %></li>
                     <li><%= link_to_unless_current "Contact", contact_url %></li>
                     <li><%= link_to_unless_current "Blog", blog_url %></li>
