@@ -23,14 +23,14 @@
                 <img src="<%= home_url %>images/logo.jpg" alt="AAD" />
                 <ul>
                     <li><%= link_to_unless_current "Work", work_url %></li>
-                    <li><%= link_to_unless_current "About", about_url %></li>
+<!--                    <li><%#= link_to_unless_current "About", about_url %></li> -->
                     <li><%= link_to_unless_current "Contact", contact_url %></li>
                     <li><%= link_to_unless_current "Blog", blog_url %></li>
                 </ul>
                 <h6><%= Time.now.year %> AAD</h6>
             </div>
             <div id="page-content">
-	            <%= yield :layout %>
+	        <%= yield :layout %>
 	        </div>
             <hr/>
         </div>

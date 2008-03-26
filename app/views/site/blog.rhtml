@@ -1,9 +1,20 @@
-<h1>Arthur's Design</h1>
-<h5>Art : Space : Style : Etc</h5>
-<p>A random introduction into Kansas City art, space, style, and a little bit more. Enjoy the design, thoughts, reviews, and stories from a creative designer, writer, and entrepreneur that is addicted to caffeine, bikes and chocolate muffins. Date on!</p>
-
-<% for post in @posts %>
-    <h6><%=h post.posted_on.strftime("%d.%m.%Y") %></h6>
-    <h5><%=h post.title %></h5>
-    <%= textilize(post.body) %>
-<% end %>
+            <div id="links-area">
+                <ul>
+                    <li><a href="#">Photography</a></li>
+                </ul>
+            </div>
+            <div id="content-area">
+                <h1>Arthur's Design</h1>
+                <h5>Art : Space : Style : Etc</h5>
+                <p>A random introduction into Kansas City art, space, style, and a little bit more. Enjoy the design, thoughts, reviews, and stories from a creative designer, writer, and entrepreneur that is addicted to caffeine, bikes and chocolate muffins. Date on!</p>
+                <hr style="margin:2em 0 2em 0;visibility:visible;width:400px"/>
+            <% for post in @posts %>
+                <div class="post">
+                    <h6><%=h post.posted_on.strftime("%m.%d.%Y") %></h6>
+                    <h5><%=h post.title %></h5>
+                    <%= textilize(post.body) %>
+                    <br/>
+                    <p>POSTED BY ARTHUR &nbsp;&nbsp;<strong>0 Comments</strong></p>
+                </div>
+            <% end %>
+            </div>

@@ -3,14 +3,14 @@
 #page-content {
   background-color:#fff;
   color:#666;
-  height:500px;
   padding-top:95px;
-  padding-left:157px;
-  width:463px;
   }
 #page-content br {
   display:block;
   margin:5px auto 5px auto;
+  }
+#page-content div.post h5 {
+  font-weight:bold !important; 
   }
 #page-content h1 {
   background-color:inherit;
@@ -19,7 +19,7 @@
   text-transform:uppercase;
   }
 #page-content h5 {
-  font-weight:normal;
+  font-weight:normal !important;
   text-transform:uppercase;
   }
 #page-content h6 {
@@ -40,4 +40,30 @@
   font-weight:bold;
   margin-top:0;
   text-transform:uppercase;
+  }
+
+#links-area {
+  float:left;
+  height:500px;
+  margin-top:130px;
+  padding:16px;
+  width:125px;
+  }
+#links-area li {
+  font-size:1.12em !important;
+  font-weight:bold !important;
+  text-transform:uppercase;
+  }
+#links-area li a{
+  background-color:inherit;
+  color:#444;
+  }
+#links-area li a:hover {
+  background-color:inherit;
+  color:#ccc;
+  }
+
+#content-area {
+  float:left;
+  width:460px;
   }
