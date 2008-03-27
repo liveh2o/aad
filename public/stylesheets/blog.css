@@ -50,8 +50,9 @@
   width:125px;
   }
 #links-area li {
-  font-size:1.12em !important;
+  font-size:1.16em !important;
   font-weight:bold !important;
+  margin:0 0 1em 0;
   text-transform:uppercase;
   }
 #links-area li a{
