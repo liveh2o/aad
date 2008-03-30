@@ -1,27 +1,22 @@
-<h1>Editing post</h1>
+<h1>blog <small>:: edit post</small></h1>
 
 <%= error_messages_for :post %>
 
 <% form_for(:post, :url => admin_post_path(@post), :html => { :method => :put }) do |f| %>
+  <br/><br/>
   <p>
     <b>Title</b><br />
     <%= f.text_field :title %>
-  </p>
-
+  </p><br/><br/>
   <p>
     <b>Body</b><br />
-    <%= f.text_area :body, :cols => 100 %>
-  </p>
-
+    <%= f.text_area :body %>
+  </p><br/><br/>
   <p>
     <b>Posted on</b><br />
     <%= f.date_select :posted_on %>
-  </p>
-
+  </p><br/><br/>
   <p>
-    <%= submit_tag "Update" %>
+    <%= submit_tag "Save Changes" %> or <%= link_to 'cancel', admin_posts_path %>
   </p>
 <% end %>
-
-<%= link_to 'Show', admin_post_path(@post) %> |
-<%= link_to 'Back', admin_posts_path %>

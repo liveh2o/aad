@@ -13,7 +13,7 @@ class SiteController < ApplicationController
   end
   
   def work
-    @portfolio = PortfolioImage.find(:all)
+    @portfolio = PortfolioImage.find(:all, :order => 'position')
     unless params[:id].nil?
       @image = PortfolioImage.find(params[:id])
     else 

@@ -1,4 +1,4 @@
-<h1>New post</h1>
+<h1>blog <small>:: new post</small></h1>
 
 <%= error_messages_for :post %>
 
@@ -6,21 +6,16 @@
   <p>
     <b>Title</b><br />
     <%= f.text_field :title %>
-  </p>
-
+  </p><br /><br />
   <p>
     <b>Body</b><br />
     <%= f.text_area :body %>
-  </p>
-
+  </p><br /><br />
   <p>
     <b>Posted on</b><br />
     <%= f.date_select :posted_on %>
-  </p>
-
+  </p><br /><br />
   <p>
-    <%= submit_tag "Create" %>
+    <%= submit_tag "Publish" %> or <%= link_to 'Cancel', admin_posts_path %>
   </p>
 <% end %>
-
-<%= link_to 'Back', admin_posts_path %>

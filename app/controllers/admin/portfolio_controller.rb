@@ -1,10 +1,10 @@
 class Admin::PortfolioController < ApplicationController
-  layout 'posts'
+  layout 'admin'
   
   # GET /portfolio
   # GET /portfolio.xml
   def index
-    @portfolio = PortfolioImage.find(:all)
+    @portfolio = PortfolioImage.find(:all,:order => "position")
 
     respond_to do |format|
       format.html # index.rhtml
@@ -75,5 +75,12 @@ class Admin::PortfolioController < ApplicationController
       format.html { redirect_to admin_portfolio_index_path }
       format.xml  { head :ok }
     end
+  end
+  
+  def sort_images
+    params[:portfolio_images].each_with_index do |id, pos|
+      PortfolioImage.find(id).update_attribute(:position, pos+1)
+    end
+    render :nothing => true
   end
 end

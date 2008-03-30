@@ -1,17 +1,15 @@
-<h1>Listing posts</h1>
+<h1>blog <small>:: posts</small></h1>
+<br /><br />
+
+
+<%= button_to 'New post', new_admin_post_path, :method => :get %>
+<br/><br/>
 
 <table>
-  <tr>
-  </tr>
-
 <% for post in @posts %>
   <tr>
-    <td><%= link_to image_tag('trash.gif'), admin_post_path(post), :confirm => 'Are you sure?', :method => :delete %></td>
-    <td><%= link_to post.title.titleize, edit_admin_post_path(post) %></td>
+    <td><%= link_to image_tag('trash.gif', :style => 'margin-right:10px;'), admin_post_path(post), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><h5><%= link_to post.title.titleize, edit_admin_post_path(post) %></h5></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New post', new_admin_post_path %>

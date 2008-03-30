@@ -1,6 +1,6 @@
 class Admin::PostsController < ApplicationController
   #before_filter :initialize
-  layout 'posts'
+  layout 'admin'
   
   # GET /posts
   # GET /posts.xml
