@@ -131,3 +131,19 @@ ul {
   background-color:inherit;
   color:#444;
   }
+#page-content h1 {
+  margin-bottom:25px;
+  }
+
+
+#content-area {
+  float:left;
+  width:400px;
+  }
+
+#content-side-bar {
+  border-left:1px solid #444;
+  float:right;
+  height:400px;
+  width:200px;
+  }

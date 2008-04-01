@@ -1,3 +1,4 @@
+
             <div id="links-area">
                 <ul>
                     <li><a href="http://www.flickr.com/photos/arthurdesign/" target="_blank">Photography</a></li>
@@ -8,9 +9,10 @@
                 <h1>Arthur's Design</h1>
                 <h5>Art : Space : Style : Etc</h5>
                 <p>A random introduction into Kansas City art, space, style, and a little bit more. Enjoy the design, thoughts, reviews, and stories from a creative designer, writer, and entrepreneur that is addicted to caffeine, bikes and chocolate muffins. Dote on!</p>
-                <hr style="margin:2em 0 2em 0;visibility:visible;width:400px"/>
+                <hr style="margin:2em 0 2em 0;visibility:visible;width:410px"/>
             <% for post in @posts %>
                 <div class="post">
+                    <img src="<%= blog_image_path(post.image.id) %>" style="width:410px" />
                     <h6><%=h post.posted_on.strftime("%m.%d.%Y") %></h6>
                     <h5><%=h post.title %></h5>
                     <%= textilize(post.body) %>

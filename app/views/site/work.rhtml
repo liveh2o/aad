@@ -1,12 +1,10 @@
                 <%= image_tag portfolio_url(@image) %>
                 <br/><br/>
-                <% i = 1 %>
                 <ul>
                 <% for image in @portfolio %>
                       <li>
-                          <%= link_to_unless_current i, work_url(image.id) %>
+                          <%= link_to_unless_current image.position, work_url(image.id) %>
                       </li>
-                  <% i += 1 %>
                 <% end %>
                 </ul><br/>
                 <h6><%= @image.title.upcase %></h6>

@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   
   map.resources :portfolio
+  map.resources :blog_images
     
   map.namespace:admin do |admin|
     admin.resources :posts,

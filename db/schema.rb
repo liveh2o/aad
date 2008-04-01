@@ -9,7 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 5) do
+ActiveRecord::Schema.define(:version => 6) do
+
+  create_table "blog_images", :force => true do |t|
+    t.binary  "data"
+    t.integer "post_id"
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "email_address"

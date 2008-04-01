@@ -12,7 +12,11 @@
     <b>Body</b><br />
     <%= f.text_area :body %>
   </p>
-
+  
+  <p><b>New Image</b><br/>
+    <%= f.file_field("data") %>
+  </p><br/><br/>
+  
   <p>
     <b>Posted on</b><br />
     <%= f.date_select :posted_on %>

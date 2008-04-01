@@ -2,7 +2,7 @@
 
 <%= error_messages_for :post %>
 
-<% form_for(:post, :url => admin_post_path(@post), :html => { :method => :put }) do |f| %>
+<% form_for(:post, :url => admin_post_path(@post), :html => { :method => :put, :multipart => true  }) do |f| %>
   <br/><br/>
   <p>
     <b>Title</b><br />
@@ -11,6 +11,10 @@
   <p>
     <b>Body</b><br />
     <%= f.text_area :body %>
+  </p><br/><br/>
+  <img src="<%= blog_image_path(@post.image.id) %>" style="width:410px" /><br/><br/>
+  <p><b>New/Replace Image</b><br/>
+    <%= f.file_field("data") %>
   </p><br/><br/>
   <p>
     <b>Posted on</b><br />

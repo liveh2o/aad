@@ -33,15 +33,21 @@ class Admin::PostsController < ApplicationController
   # GET /posts/1;edit
   def edit
     @post = Post.find(params[:id])
+    @post.image = BlogImage.new if @post.image.nil?
   end
 
   # POST /posts
   # POST /posts.xml
   def create
+    @image = BlogImage.create(:data => params[:post][:data])
+    params[:post].delete("data")
+    
     @post = Post.new(params[:post])
 
     respond_to do |format|
       if @post.save
+        @image.post_id = @post.id;
+        @image.save
         format.html { redirect_to admin_posts_url }
         format.xml  { head :created, :location => post_url(@post) }
       else
@@ -55,6 +61,16 @@ class Admin::PostsController < ApplicationController
   # PUT /posts/1.xml
   def update
     @post = Post.find(params[:id])
+
+    unless @post.image.nil?
+      @image = BlogImage.find(@post.image.id)
+      @image.update_attribute(:data,params[:post][:data])
+    else
+      @image = BlogImage.create(:data => params[:post][:data])
+      @post.image.id = @image.id
+    end
+
+    params[:post].delete("data")
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
