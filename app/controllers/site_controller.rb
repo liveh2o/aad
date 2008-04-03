@@ -8,7 +8,7 @@ class SiteController < ApplicationController
   end
   
   def blog
-    @posts = Post.find(:all)
+    @posts = Post.find(:all,:order => "posted_on DESC") 
     @tags = Tag.find(:all)
     @links = Link.find(:all,:order => :position)
   end

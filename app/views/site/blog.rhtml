@@ -13,7 +13,9 @@
                 <hr style="margin:2em 0 2em 0;visibility:visible;width:410px"/>
             <% for post in @posts %>
                 <div class="post">
-                    <img src="<%= blog_image_path(post.image.id) %>" style="width:410px" />
+                    <% unless post.image.nil? %> 
+		    <img src="<%= blog_image_path(post.image.id) %>" style="width:410px" />
+		    <% end %>
                     <h6><%=h post.posted_on.strftime("%m.%d.%Y") %></h6>
                     <h5><%=h post.title %></h5>
                     <%= textilize(post.body) %>
