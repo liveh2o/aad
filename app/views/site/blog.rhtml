@@ -1,8 +1,9 @@
 
             <div id="links-area">
                 <ul>
-                    <li><a href="http://www.flickr.com/photos/arthurdesign/" target="_blank">Photography</a></li>
-                    <li><a href="http://astore.amazon.com/arthursdesign-20/002-6271291-8800030" target="_blank">Store</a></li>
+            <% for link in @links %>
+                    <li><a href="<%= link.url %>" target="_blank"><%= link.name %></a></li>
+            <% end %>
                 </ul>
             </div>
             <div id="content-area">

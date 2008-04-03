@@ -134,16 +134,51 @@ ul {
 #page-content h1 {
   margin-bottom:25px;
   }
+#page-content li.image {
+  border-bottom:1px solid #ccc;
+  cursor:move;
+  margin:5px;
+  padding:2px 0 2px 0;
+  }
 
 
 #content-area {
   float:left;
-  width:400px;
+  width:300px;
+  }
+#content-area h5, #content-side-bar h5 {
+  display:inline;
+  }
+#content-area img {
+  margin-right:10px;
+  vertical-align:middle;
+  }
+#content-area li {
+  margin:8px 0 0 0;
   }
 
 #content-side-bar {
   border-left:1px solid #444;
   float:right;
   height:400px;
-  width:200px;
+  padding-left:20px;
+  width:280px;
+  }
+#content-side-bar img {
+  vertical-align:middle;
+  }
+#content-side-bar li {
+  border-bottom:1px solid #ccc;
+  cursor:move;
+  margin:10px 0 0 0;
+  padding:2px 0 2px 0;
+  }
+#content-side-bar small {
+  margin:0 5px 0 2px;
+  }
+#content-side-bar small a {
+  border-bottom:1px solid #777;
+  }
+#content-side-bar small.url {
+  margin:0 0 0 38px;
   }

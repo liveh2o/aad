@@ -4,7 +4,7 @@
 <br/><br/>
 <ul id="portfolio_images">
 <% for image in @portfolio %>
-  <li id="image_<%= image.id %>" style="border-bottom:1px solid #ccc;margin:5px;padding:2px 0 2px 0;">
+  <li id="image_<%= image.id %>" class="image">
       <img src="<%= portfolio_path(image) %>" style="vertical-align:middle;width:65px" />
       <h5 style="display:inline;margin:0;"><%=h image.title %></h5><%= link_to image_tag('trash.gif',:style => 'margin:-4px 0 0 20px;vertical-align:middle;'), admin_portfolio_path(image), :confirm => 'Are you sure?', :method => :delete %>
   </li>

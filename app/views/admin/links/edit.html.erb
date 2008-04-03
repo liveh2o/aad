@@ -1,0 +1,21 @@
+<h1>blog <small>:: edit link</small></h1>
+
+<%= error_messages_for :links %>
+
+<% form_for(:link, :url => admin_link_path(@link), :html => { :method => :put }) do |f| %>
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p><br /><br />
+  <p>
+    <b>Url</b><br />
+    <%= f.text_field :url, :size => 75 %>
+  </p><br /><br />
+  <p>
+    <b>Alt</b> <i>(optional)</i><br />
+    <%= f.text_field :alt %>
+  </p><br /><br />
+  <p>
+    <%= f.submit "Save changes" %> or <%= link_to 'cancel', admin_posts_path %>
+  </p>
+<% end %>

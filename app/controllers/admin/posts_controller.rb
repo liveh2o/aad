@@ -5,8 +5,8 @@ class Admin::PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-        
     @posts = Post.find(:all)
+    @links = Link.find(:all,:order => :position)
 
     respond_to do |format|
       format.html # index.rhtml

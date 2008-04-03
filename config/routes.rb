@@ -19,5 +19,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :portfolio,
       :as => 'portfolio',
       :collection => { :sort_images => :post }
+    admin.resources :links,
+      :collection => { :sort_links => :post }
   end
 end

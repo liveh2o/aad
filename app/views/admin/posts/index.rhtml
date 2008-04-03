@@ -1,17 +1,20 @@
-<h1>blog <small>:: posts</small></h1>
+<h1>blog <small>:: posts / links</small></h1>
 <div id="content-area">
     <%= button_to 'New post', new_admin_post_path, :method => :get %>
-    <br/><br/>
-
-    <table>
+    <br/>
+    <ul>
     <% for post in @posts %>
-      <tr>
-        <td><%= link_to image_tag('trash.gif', :style => 'margin-right:10px;'), admin_post_path(post), :confirm => 'Are you sure?', :method => :delete %></td>
-        <td><h5><%= link_to post.title.titleize, edit_admin_post_path(post) %></h5></td>
-      </tr>
+        <li><%= link_to image_tag('trash.gif'), admin_post_path(post), :confirm => 'Are you sure?', :method => :delete %><h5><%= link_to post.title.titleize, edit_admin_post_path(post) %></h5></li>
     <% end %>
-    </table>
+    </ul>
 </div>
 <div id="content-side-bar">
-    
+    <%= button_to 'Add a link', new_admin_link_path, :method => :get %>
+    <br/>
+    <ul id="links">
+    <% for link in @links %>
+        <li id="link_<%= link.id %>" title="<%=link.url %>"><%= link_to image_tag('trash.gif'), admin_link_path(link), :confirm => 'Are you sure?', :method => :delete %>  <small><%= link_to "edit", edit_admin_link_path(link) %></small> <h5><%= link.name %></h5><br/><small class="url">( <%= truncate(link.url, 52, "...") %> )</small></li>
+    <% end %>
+    </ul>
+    <%= sortable_element 'links', :url => sort_links_admin_links_url %>
 </div>

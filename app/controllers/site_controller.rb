@@ -10,6 +10,7 @@ class SiteController < ApplicationController
   def blog
     @posts = Post.find(:all)
     @tags = Tag.find(:all)
+    @links = Link.find(:all,:order => :position)
   end
   
   def work
