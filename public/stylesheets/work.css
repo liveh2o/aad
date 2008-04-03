@@ -19,6 +19,12 @@
 #page-content li a {
   font-weight:normal;
   }
+#page-content p {
+  clear:both;
+  float:right;
+  font-size:.85em !important;
+  margin:5px 50px 0 0;
+  }
 #page-content ul {
   float:right;
   margin-right:50px;

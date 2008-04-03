@@ -1,27 +1,18 @@
 <h1>work <small>:: edit portfolio image</small></h1>
 
-<%= error_messages_for :post %>
+<%= error_messages_for :image %>
 
-<% form_for(:post, :url => admin_post_path(@post), :html => { :method => :put }) do |f| %>
+<% form_for(:image, :url => admin_portfolio_path(@image), :html => { :method => :put }) do |f| %>
+  <%= image_tag portfolio_url(@image) %>
   <p>
     <b>Title</b><br />
     <%= f.text_field :title %>
-  </p>
-
+  </p><br /><br />
   <p>
-    <b>Body</b><br />
-    <%= f.text_area :body, :cols => 100 %>
-  </p>
-
+    <b>Additional Information</b> <i>(optional, textile)</i><br />
+    <%= f.text_area :metadata, :rows => 10 %>
+  </p><br /><br />
   <p>
-    <b>Posted on</b><br />
-    <%= f.date_select :posted_on %>
-  </p>
-
-  <p>
-    <%= submit_tag "Update" %>
+    <%= submit_tag "Save changes" %> or <%= link_to 'Cancel', admin_portfolio_index_path %>
   </p>
 <% end %>
-
-<%= link_to 'Show', admin_post_path(@post) %> |
-<%= link_to 'Back', admin_posts_path %>

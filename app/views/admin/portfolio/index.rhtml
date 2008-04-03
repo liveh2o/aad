@@ -6,7 +6,7 @@
 <% for image in @portfolio %>
   <li id="image_<%= image.id %>" class="image">
       <img src="<%= portfolio_path(image) %>" style="vertical-align:middle;width:65px" />
-      <h5 style="display:inline;margin:0;"><%=h image.title %></h5><%= link_to image_tag('trash.gif',:style => 'margin:-4px 0 0 20px;vertical-align:middle;'), admin_portfolio_path(image), :confirm => 'Are you sure?', :method => :delete %>
+      <h5 style="display:inline;margin:0;"><%=h image.title %></h5><small style="margin:0 0 0 20px;"><%= link_to "edit", edit_admin_portfolio_path(image) %></small><%= link_to image_tag('trash.gif',:style => 'margin:-4px 0 0 10px;vertical-align:middle;'), admin_portfolio_path(image), :confirm => 'Are you sure?', :method => :delete %>
   </li>
 <% end %>
 </ul>

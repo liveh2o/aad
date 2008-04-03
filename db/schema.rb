@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 7) do
+ActiveRecord::Schema.define(:version => 8) do
 
   create_table "blog_images", :force => true do |t|
     t.binary  "data"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 7) do
     t.binary  "data"
     t.string  "title"
     t.integer "position"
+    t.text    "metadata"
   end
 
   create_table "posts", :force => true do |t|
