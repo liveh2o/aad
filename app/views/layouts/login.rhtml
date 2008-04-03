@@ -20,23 +20,19 @@
         <div id="page-wrap">
             <div id="page-navigation-wrap">
                 <div id="page-navigation">
-                    <img src="/images/top_grey.gif" alt="top" />
-                    <ul>
-                        <li><%= link_to_unless_current "blog", admin_posts_url %></li>
-                        <li><%= link_to_unless_current "work", admin_portfolio_index_url %></li>
-                    </ul>
-                    <img src="/images/bottom_grey.gif" alt="bottom" />
+
                 </div>
             </div>
             <div id="page-header">
                 <%= link_to image_tag('/images/logo.jpg'), home_url %>
                 <h4>admin</h4>
-                <small style="font-size:1.1em"> :: <%= link_to 'logout',logout_path %></small>
             </div>
             <div id="page-content">
-	        <%= yield :layout %>
+                <h1>Login</h1>
+                <p style="color:#f00;"><%= flash[:notice] %></p><br/>
+	            <%= yield :layout %>
 	        </div>
         </div>
-        <h1 id="url">arthuradesign.com</h1>
+	        <h1 id="url">arthuradesign.com</h1>
     </body>
 </html>

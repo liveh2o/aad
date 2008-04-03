@@ -1,4 +1,7 @@
 class Admin::PortfolioController < ApplicationController
+  # Check for authorization
+  before_filter :authorize
+  # Set the layout
   layout 'admin'
   
   # GET /portfolio

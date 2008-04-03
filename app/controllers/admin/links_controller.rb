@@ -1,5 +1,7 @@
 class Admin::LinksController < ApplicationController
-  #Set the layout
+  # Check for authorization
+  before_filter :authorize
+  # Set the layout
   layout 'admin'
 
   # GET /portfolio

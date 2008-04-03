@@ -16,4 +16,9 @@ class ApplicationController < ActionController::Base
     @css = action_name
     @page = action_name
   end
+  
+  def authorize
+    redirect_to login_url unless session[:user_id]
+  end
+  
 end

@@ -4,7 +4,10 @@ ActionController::Routing::Routes.draw do |map|
   map.contact '/contact', :controller => 'site', :action => 'contact'
   map.blog '/blog', :controller => 'site', :action => 'blog'
   map.work '/work/:id', :controller => 'site', :action => 'work'
-  map.admin '/admin/', :controller => 'admin'
+  map.admin '/admin', :controller => 'admin'
+  
+  map.login '/admin/login', :controller => 'admin', :action => 'login'
+  map.logout '/admin/logout', :controller => 'admin', :action => 'logout'
 
   map.resources :posts, :path_prefix => "/blog", :member => { :comment => :post } do |post|
     post.resources :tags

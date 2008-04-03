@@ -1,5 +1,7 @@
 class Admin::PostsController < ApplicationController
-  #before_filter :initialize
+  # Check for authorization
+  before_filter :authorize
+  # Set the layout
   layout 'admin'
   
   # GET /posts

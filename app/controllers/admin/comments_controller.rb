@@ -1,4 +1,9 @@
 class Admin::CommentsController < ApplicationController
+  # Check for authorization
+  before_filter :authorize
+  # Set the layout
+  layout 'admin'
+  
   # GET /comments
   # GET /comments.xml
   def index

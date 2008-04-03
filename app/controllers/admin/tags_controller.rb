@@ -1,4 +1,7 @@
 class Admin::TagsController < ApplicationController
+  # Check for authorization
+  before_filter :authorize
+  
   # GET /tags
   # GET /tags.xml
   def index
