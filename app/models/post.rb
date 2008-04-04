@@ -1,5 +1,10 @@
 class Post < ActiveRecord::Base
   has_and_belongs_to_many :tags
-  has_many :comments
+  has_many :comments, :order => "posted_on DESC"
   has_one :image, :class_name => 'BlogImage'
+  
+  def url
+    str = '/' + title.gsub(/\ /,'_').downcase.dasherize 
+    posted_on.strftime('/%Y/%m/%d') + str
+  end
 end

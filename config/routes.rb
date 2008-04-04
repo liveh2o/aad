@@ -1,18 +1,38 @@
 ActionController::Routing::Routes.draw do |map|
+  # Home page
   map.home '', :controller => 'site', :action => 'home'
+  # About page
   #map.about '/about', :controller => 'site', :action => 'about'
+  # Contact page
   map.contact '/contact', :controller => 'site', :action => 'contact'
-  map.blog '/blog', :controller => 'site', :action => 'blog'
+  # Blog
+  map.blog '/blog', :controller => 'posts'
+  # Blog posts by date
+  map.connect '/blog/:year/:month/:day/:title',
+    :controller => 'posts',
+    :action => 'show_by_date',
+    :requirements => { :year => /\d{4}/, 
+        :day => /\d{1,2}/,
+        :month => /\d{1,2}/ }
+  # Blog posts by year
+  map.connect '/blog/:year',
+    :controller => 'posts',
+    :action => 'index_by_year',
+    :requirements => { :year => /\d{4}/ }
+  # Blog comment
+  map.connect '/blog/:id/comment',
+    :controller => 'posts',
+    :action => 'comment',
+    :method => :post
+  # Work page
   map.work '/work/:id', :controller => 'site', :action => 'work'
+  # Admin section
   map.admin '/admin', :controller => 'admin'
-  
+  # Login page
   map.login '/admin/login', :controller => 'admin', :action => 'login'
+  # Logout
   map.logout '/admin/logout', :controller => 'admin', :action => 'logout'
-
-  map.resources :posts, :path_prefix => "/blog", :member => { :comment => :post } do |post|
-    post.resources :tags
-  end
-  
+  # Portfolio and blog images
   map.resources :portfolio
   map.resources :blog_images
     

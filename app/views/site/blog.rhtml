@@ -1,11 +1,5 @@
+<%= render :partial => "site/links", :locals => { :links => @links, :posts => @posts }%>
 
-            <div id="links-area">
-                <ul>
-            <% for link in @links %>
-                    <li><a href="<%= link.url %>" target="_blank"><%= link.name %></a></li>
-            <% end %>
-                </ul>
-            </div>
             <div id="content-area">
                 <h1>Arthur's Design</h1>
                 <h5>Art : Space : Style : Etc</h5>
@@ -13,14 +7,14 @@
                 <hr style="margin:2em 0 2em 0;visibility:visible;width:410px"/>
             <% for post in @posts %>
                 <div class="post">
-                    <% unless post.image.nil? %> 
-		    <img src="<%= blog_image_path(post.image.id) %>" style="width:410px" />
-		    <% end %>
+                <% unless post.image.nil? %> 
+		            <img src= "<%= blog_image_path(post.image.id) %>" style="width:410px" />
+		        <% end %>
                     <h6><%=h post.posted_on.strftime("%m.%d.%Y") %></h6>
                     <h5><%=h post.title %></h5>
                     <%= textilize(post.body) %>
                     <br/>
-                    <p>POSTED BY ARTHUR &nbsp;&nbsp;<strong>0 Comments</strong></p>
+                    <p>POSTED BY ARTHUR &nbsp;&nbsp;<a href="<%=blog_url + post.url + "/#comments" %>"><strong><%=post.comments.length %> Comments</strong></a></p>
                 </div>
             <% end %>
             </div>

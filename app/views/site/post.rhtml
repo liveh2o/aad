@@ -1,0 +1,43 @@
+<%= render :partial => "site/links", :locals => { :links => @links, :posts => @posts }%>
+            <div id="content-area">
+                <h1>Arthur's Design</h1>
+                <h5>Art : Space : Style : Etc</h5>
+                <p>A random introduction into Kansas City art, space, style, and a little bit more. Enjoy the design, thoughts, reviews, and stories from a creative designer, writer, and entrepreneur that is addicted to caffeine, bikes and chocolate muffins. Dote on!</p>
+                <hr style="margin:2em 0 2em 0;visibility:visible;width:410px"/>
+
+                <div class="post">
+                <% unless @post.image.nil? %> 
+                    <img src="<%= blog_image_path(@post.image.id) %>" style="width:410px" />
+                <% end %>
+                    <h6><%=h @post.posted_on.strftime("%m.%d.%Y") %></h6>
+                    <h5><%=h @post.title %></h5>
+                    <%= textilize(@post.body) %>
+                    <br/>
+                    <p>POSTED BY ARTHUR &nbsp;&nbsp;</p>
+                </div>
+                <br/><br/><br/>
+                <h3><a id="comments"><%=@post.comments.length %> COMMENTS:</a></h3><br/><br/>
+                <% for comment in @post.comments %>
+                <div class="comment">
+                    <h5><%= comment.email_address %></h5>
+                    <%= simple_format(comment.body) %>
+                </div>
+                <% end %>
+                <br/><br/>
+                
+                <h3><a id="comments">DOTE</a></h3>
+                <% form_for(:comment, :url => blog_url + "/" + @post.id.to_s + "/comment") do |f| %>
+                  <br/><br/>
+                  <p>
+                    <b>Name</b>
+                    <%= f.text_field :email_address %>
+                  </p>
+                  <p>
+                    <b>Body</b>
+                    <%= f.text_area :body %>
+                  </p>
+                  <p>
+                    <%= submit_tag "Comment" %>
+                  </p>
+                <% end %>
+            </div>
