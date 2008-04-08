@@ -3,11 +3,16 @@
 input, textarea {
   border:1px solid #ccc;
   clear:both;
-  margin-top:2px;
   padding:0 4px 2px 4px;
   }
 textarea {
   width:400px
+  }
+
+div.comment {
+  border-top:1px solid #ccc;
+  padding:10px 0 10px 0;
+  width:400px;
   }
 
 #page-content {
@@ -19,8 +24,16 @@ textarea {
   display:block;
   margin:5px auto 5px auto;
   }
+#page-content div.post {
+  border-top:1px solid #ccc;
+  padding:20px 0 5px 0;
+  width:410px;
+  }
 #page-content div.post h5 {
   font-weight:bold !important; 
+  }
+#page-content div.comment p {
+  margin:0 0 10px 0;
   }
 #page-content h1 {
   background-color:inherit;
@@ -50,6 +63,17 @@ textarea {
   font-weight:bold;
   margin-top:0;
   text-transform:uppercase;
+  }
+
+#new-comment div {
+  line-height:16px;
+  margin:10px;
+  }
+#new-comment label {
+  display:block;
+  float:left;
+  padding-top:2px;
+  width:50px;
   }
 
 #links-area {

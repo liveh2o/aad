@@ -53,6 +53,7 @@ class PostsController < ApplicationController
   def comment
     @comment = Comment.new(params[:comment])
     @comment.post_id = params[:id]
+    @comment.posted_on = Time.today
 
     respond_to do |format|
       if @comment.save
