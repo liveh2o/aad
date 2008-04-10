@@ -6,6 +6,7 @@ input, textarea {
   padding:0 4px 2px 4px;
   }
 textarea {
+  overflow:auto;
   width:400px
   }
 
@@ -67,7 +68,7 @@ div.comment {
 
 #new-comment div {
   line-height:16px;
-  margin:10px;
+  margin:10px 0 10px 0;
   }
 #new-comment label {
   display:block;

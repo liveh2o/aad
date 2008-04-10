@@ -8,6 +8,7 @@
   text-align:right;
   }
 #page-content h6 {
+  clear:both;
   float:right;
   margin:15px 50px 0 0;
   }
