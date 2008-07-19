@@ -40,6 +40,7 @@ class Admin::PortfolioController < ApplicationController
   # POST /portfolio.xml
   def create
     @image = PortfolioImage.create(params[:image])
+    @image.position = @image.id
 
     respond_to do |format|
       if @image.save
