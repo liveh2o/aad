@@ -12,7 +12,7 @@
 		        <% end %>
                     <h6><%=h post.posted_on.strftime("%m.%d.%Y") %></h6>
                     <h5><%=h post.title %></h5>
-                    <%= textilize(post.body) %>
+                    <%=textilize(post.body) %>
                     <br/>
                     <p>POSTED BY ARTHUR &nbsp;&nbsp;<a href="<%=blog_url + post.url + "/#comments" %>"><strong><%=post.comments.length %> Comments</strong></a></p>
                 </div>
