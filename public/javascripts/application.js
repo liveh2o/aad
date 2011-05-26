@@ -1,2 +1,23 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+var whereAt = -300;
+var howFar = 700;
+
+function slideOnOver(whereTo) {
+  $(".slides").animate({
+    left: "50%",
+    marginLeft: whereTo + "px",
+  }, 250 );  
+}
+
+$(document).ready(function(){
+  slideOnOver(whereAt);
+  
+  $(".next").click(function(){
+    whereAt = whereAt - howFar;
+    slideOnOver(whereAt);
+  });
+  
+  $(".prev").click(function(){
+    whereAt = whereAt + howFar;
+    slideOnOver(whereAt);
+  });
+});
