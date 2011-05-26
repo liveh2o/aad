@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110517190334) do
+ActiveRecord::Schema.define(:version => 20110517202931) do
 
   create_table "blog_images", :force => true do |t|
     t.binary  "data",    :limit => 16777215
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20110517190334) do
   end
 
   create_table "portfolio_images", :force => true do |t|
-    t.binary  "image_file_data", :limit => 16777215
     t.string  "title"
     t.integer "position"
     t.text    "metadata"

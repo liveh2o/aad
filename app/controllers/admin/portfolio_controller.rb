@@ -39,11 +39,11 @@ class Admin::PortfolioController < ApplicationController
   # POST /portfolio
   # POST /portfolio.xml
   def create
-    @image = PortfolioImage.create(params[:image])
+    @image = PortfolioImage.new(params[:image])
     @image.position = @image.id
 
     respond_to do |format|
-      if @image.save
+      if @image.save!
         format.html { redirect_to admin_portfolio_index_path }
         format.xml  { head :created, :location => admin_portfolio_url(@image) }
       else
