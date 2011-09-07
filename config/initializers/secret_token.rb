@@ -2,6 +2,6 @@
 
 # Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
-# Make sure the secret is at least 30 characters and all random, 
+# Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-ActionController::Base.cookie_verifier_secret = '6854674ee74d5541d4f9620a990f95ce25e18c0997fa10e773c387a02660ec739ffc0917ab78d8ac7131a4edc8448cf3dff676ef29ffbd928d0fb8ab1dce82a7';
+Arthur::Application.config.secret_token = 'b315af78425ed6ecfb9eb242442a1e0ab9fbba12d58a35b738e1def97840a314d2e9cdb6a463753a0a9f1286eb69ef435f5b4c747b1c66f9840bc9130f3438b6'
