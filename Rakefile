@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Arthur::Application.load_tasks
+AAD::Application.load_tasks

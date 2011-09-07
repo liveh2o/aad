@@ -1,4 +1,4 @@
-ActionController::Routing::Routes.draw do |map|
+AAD::Application.routes.draw do |map|
   # Home page
   map.home '', :controller => 'site', :action => 'home'
   # About page
