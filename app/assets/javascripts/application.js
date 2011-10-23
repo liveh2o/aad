@@ -6,4 +6,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.lionbars.0.2.1
 //= require_tree .
