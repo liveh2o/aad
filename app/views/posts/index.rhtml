@@ -1,9 +1,0 @@
-<h1>Arthur's Design</h1>
-<h5>Art : Space : Style : Etc</h5>
-<p>A random introduction into Kansas City art, space, style, and a little bit more. Enjoy the design, thoughts, reviews, and stories from a creative designer, writer, and entrepreneur that is addicted to caffeine, bikes and chocolate muffins. Date on!</p>
-
-<% for post in @posts %>
-    <h6><%=h post.posted_on.strftime("%d.%m.%Y") %></h6>
-    <h5><%=h post.title %></h5>
-    <%= textilize(post.body) %>
-<% end %>
