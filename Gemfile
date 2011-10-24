@@ -18,9 +18,12 @@ gem 'passenger'
 
 # Deploy with Capistrano
 gem 'capistrano'
-gem 'hoptoad_notifier'
 
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+end
+
+group :production do
+  gem 'therubyracer'
 end
