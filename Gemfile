@@ -19,6 +19,11 @@ gem 'passenger'
 # Deploy with Capistrano
 gem 'capistrano'
 
+group :development do
+  gem 'guard-livereload'
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+end
+
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
