@@ -19,7 +19,7 @@ body {
   color:#444;  
   cursor:default;
   font:12px/normal Helvetica, Arial, sans-serif;
-  padding:10px 0;  
+  padding:0;  
   text-align:center;
 }
 
@@ -32,11 +32,12 @@ h6 {
   font-weight:bold;
 }
 
-.wrap {
-  margin:auto;
+.fixed {
+  margin:10px 0 10px -405px;
   overflow:hidden;
   padding:0 20px 0 20px;
-  position:relative;
+  position:fixed;
+    left: 50%;
   text-align:left;
   width:810px;
 }
@@ -57,20 +58,20 @@ nav#social {
   font-weight:bold;
   margin-left:10px;
   text-transform:uppercase;
-}
-nav#social a#blog {
-  margin-left:10px;
-  vertical-align:bottom;
-}
-nav#social img {
-  vertical-align:middle;
+
+  a#blog {
+    margin-left:10px;
+    vertical-align:bottom;
+  }
+  
+  img {
+    vertical-align:middle;
+  }
 }
 
 section#main {
   height:450px;
-  overflow:scroll;
-  padding:70px 0 40px 0;
-  position:relative;
+  margin:70px 0 20px;
 
   img {
     float:left;
@@ -78,27 +79,30 @@ section#main {
 }
 
 footer {
-  position:relative;
-}
-footer aside {
-  float:left;
-  text-transform:uppercase; 
-}
-footer h6 {
-  position:absolute;
-    bottom:23px;
-    left:20px;
-}
-footer section {
-  float:left;
-  padding:4px 10px;
-  margin-left:30px;
-  width:445px;
-}
-footer section p {
-  font:oblique 1.2em/normal Garamond, Baskerville, Georgia, "Times New Roman", serif !important;
-  margin:0 20px 20px;
-}
-footer section p em {
-  font-style:normal;
+  aside {
+    float:left;
+    text-transform:uppercase; 
+  }
+  
+  h6 {
+    position:absolute;
+      bottom:23px;
+      left:20px;
+  }
+  
+  section {
+    float:left;
+    padding:4px 10px;
+    margin-left:30px;
+    width:445px;
+
+    p {
+      font:oblique 1.2em/normal Garamond, Baskerville, Georgia, "Times New Roman", serif !important;
+      margin:0 20px 20px;
+
+      em {
+        font-style:normal;
+      }
+    }
+  }
 }
