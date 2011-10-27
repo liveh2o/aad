@@ -32,6 +32,10 @@ h6 {
   font-weight:bold;
 }
 
+#aad {
+  padding:0 23%;
+}
+
 .fixed {
   margin:10px 0 10px -405px;
   overflow:hidden;
@@ -40,6 +44,7 @@ h6 {
     left: 50%;
   text-align:left;
   width:810px;
+  z-index: -10;
 }
 
 aside#connect {
@@ -75,6 +80,7 @@ section#main {
 
   img {
     float:left;
+    margin:0 50px;
   }
 }
 
