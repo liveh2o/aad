@@ -1,10 +1,3 @@
-$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
-require 'rvm/capistrano'                               # Load RVM's capistrano plugin.
-
-# Define RVM settings
-set :rvm_ruby_string, '1.9.2'
-set :rvm_type, :user
-
 set :application, "aad"
 
 set :scm, :git
@@ -16,7 +9,7 @@ set :use_sudo, false
 set :deploy_to, "/var/www/arthuradesign.com/"
 ssh_options[:forward_agent] = true
 
-server "dev.clearelement.co", :app, :web, :db, :primary => true
+server "ce01.clearelement.co", :app, :web, :db, :primary => true
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
@@ -27,14 +20,19 @@ namespace :deploy do
 
   desc "Sets up the environment."
   task :configure, :roles => :app do
-    run "cp #{shared_path}/config/* #{release_path}/config/"
+    #run "cp #{shared_path}/config/* #{release_path}/config/"
     run "ln -s #{shared_path}/ruby #{release_path}/vendor/ruby"
   end
   
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "touch #{File.join(current_path,'tmp','restart.txt')}"
+  task :start, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_path}; passenger start -e production -d"
+  end
+  task :stop do
+    run "cd #{current_path}; passenger stop -e production"
+  end
+  task :restart do
+    deploy.stop
+    deploy.start
   end
 end
 before "deploy:assets:precompile", "deploy:bundle"
