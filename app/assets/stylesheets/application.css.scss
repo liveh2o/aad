@@ -4,8 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require reset
  *= require_self
- *= require_tree . 
- *= require lionbars
+ *= require_tree .
 */
 
 a, a:visited {
@@ -15,7 +14,7 @@ a, a:visited {
 }
   
 body {
-  background:#fff;
+  background:#fff/*image_url('background.png') 50% 550px no-repeat fixed */;
   color:#444;  
   cursor:default;
   font:12px/normal Helvetica, Arial, sans-serif;
@@ -32,9 +31,6 @@ h6 {
   font-weight:bold;
 }
 
-#aad {
-  padding:0 23%;
-}
 
 .fixed {
   margin:10px 0 10px -405px;
@@ -42,6 +38,7 @@ h6 {
   padding:0 20px 0 20px;
   position:fixed;
     left: 50%;
+    top: 5px;
   text-align:left;
   width:810px;
 }
@@ -74,16 +71,18 @@ nav#social {
 }
 
 section#main {
-  height:450px;
-  margin:70px 0 20px;
+  height:425px;
+  margin:75px 0 0;
 
   img {
     float:left;
-    margin:0 50px;
+    margin:0;
   }
 }
 
 footer {
+  top: 520px !important;
+  
   aside {
     float:left;
     text-transform:uppercase; 
@@ -91,15 +90,15 @@ footer {
   
   h6 {
     position:absolute;
-      bottom:23px;
-      left:20px;
+      bottom: 23px;
+      left: 20px;
   }
   
   section {
     float:left;
-    padding:4px 10px;
-    margin-left:30px;
-    width:445px;
+    margin-left: 30px;
+    padding:4px 0;
+    width:550px;
 
     p {
       font:oblique 1.2em/normal Garamond, Baskerville, Georgia, "Times New Roman", serif !important;

@@ -3,38 +3,35 @@
 <head>
     <title>AAD</title>
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application" %>
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <%= csrf_meta_tags %>
 </head>
 <body>
-    <div id="aad" style="width:12204px;">
-        <header class="fixed">
-            <aside id="connect">
-                <a href="#" id="email">info@arthuradesign.com</a> | 1.816.500.0130
-                <nav id="social">
-                    <a href="https://twitter.com/arthuradesign" id="twitter"><%= image_tag("twitter.png") %></a>
-                    <a href="http://www.facebook.com/pages/Kansas-City-MO/AAD/20461599271?ref=mf" id="facebook"><%= image_tag("facebook.png") %></a>
-                    <a href="http://arthuradesign.blogspot.com" id="blog">BLOG</a>
-                </nav>
-            </aside>
-        </header>
-        <section id="main">
-            <%= yield %>
+    <header class="fixed">
+        <aside id="connect">
+            <a href="#" id="email">info@arthuradesign.com</a> | 1.816.500.0130
+            <nav id="social">
+                <a href="https://twitter.com/arthuradesign" id="twitter"><%= image_tag("twitter.png") %></a>
+                <a href="http://www.facebook.com/pages/Kansas-City-MO/AAD/20461599271?ref=mf" id="facebook"><%= image_tag("facebook.png") %></a>
+                <a href="http://arthuradesign.blogspot.com" id="blog">BLOG</a>
+            </nav>
+        </aside>
+    </header>
+    <section id="main">
+        <%= yield %>
+    </section>
+    <footer class="fixed">
+        <aside>
+            <h1>Design By</h1>
+            <%= image_tag("logo.jpg", alt: "AAD") %>
+        </aside>
+        <section>
+            <p>The design studio of <em>Arthur Cherry</em> is located in Kansas City, Missouri. <em>AAD</em> specializes in book jacket &amp; cover design, but we also like to create brand identity, play with type, take photos and work on projects print or digital. <em>Arthur</em> has received recognition in <em>Print Magazine’s Regional Design Annual</em>, been awarded <em>AIGA’s A4</em> and <em>A5 design awards</em>, been featured in <em>GOOD magazine</em>, <em>INK magazine</em> and on various design websites.</p>
+            <p>Please contact us with work inquiries or to just say hello.</p>
+            <h6>&copy; <%= Date.today.year %> AAD</h6>
         </section>
-        <footer class="fixed">
-            <aside>
-                <h1>Design By</h1> 
-                <%= image_tag("logo.jpg", :alt => "AAD") %>
-                <h6>&copy; 2011 AAD</h6>
-            </aside>
-            <section>
-                <p>The design studio of <em>Arthur Cherry</em> is located in Kansas City, Missouri. <em>AAD</em> specializes in book jacket &amp; cover design, but we also like to create brand identity, play with type, take photos and work on projects print or digital. <em>Arthur</em> has received recognition in <em>Print Magazine’s Regional Design Annual</em>, been awarded <em>AIGA’s A4</em> and <em>A5 design awards</em>, been featured in <em>GOOD magazine</em>, <em>INK magazine</em> and on various design websites.</p>
-                <p>Please contact us with work inquiries or to just say hello.</p>
-            </section>
-        </footer>
-    </div>
+    </footer>
 </body>
 </html>

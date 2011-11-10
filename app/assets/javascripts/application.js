@@ -6,10 +6,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.lionbars.0.2.1
 //= require_tree .
-
-$(document).ready(function() {
-  $('#aad').lionbars('dark', true, false, false);
-  $('#aad').height($(document).height());
-});
