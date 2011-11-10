@@ -27,5 +27,5 @@ group :test do
 end
 
 group :production do
-  #gem 'therubyracer', :require => false
+  gem 'therubyracer', :require => false unless RUBY_PLATFORM =~ /darwin/i # FIXME!!!
 end
