@@ -28,7 +28,7 @@ namespace :deploy do
     run "cd #{current_path}; passenger start -e production -d"
   end
   task :stop do
-    run "cd #{current_path}; passenger stop -e production"
+    run "cd #{current_path}; passenger stop"
   end
   task :restart do
     deploy.stop
