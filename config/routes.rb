@@ -1,3 +1,3 @@
 AAD::Application.routes.draw do
-  root :to => "works#index"
+  root :to => "application#index"
 end
